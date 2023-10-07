@@ -1,0 +1,12 @@
+<?php require 'templates/header.phtml' ?>
+
+<table>
+    <tbody>
+    <?php foreach($categorias as $categoria):?>
+        <tr>
+            <td><?=$categoria->nombre?></td>
+        </tr>
+    <?php endforeach ?>
+
+    </tbody>
+</table>
