@@ -1,0 +1,18 @@
+<?php require 'templates/header.phtml' ?>
+
+<form id="form" action="editado/<?=$id?>" method="POST" class="my-4">
+        <label >PRODUCTO</label>
+        <input name="producto" type="text">
+        <label>PRECIO</label>
+        <input name="precio" type="number" min="1">
+        <label>CATEGORIA</label>
+        <select name="categoria" class="form-select" aria-label="Default select example">
+            <option selected>Seleccione categoria</option>
+            <option value="1">electronica</option>
+            <option value="2">hogar</option>            
+            <option value="3">indumentaria</option>
+        </select>
+        <input type="submit">        
+    </form>
+
+<?php require 'templates/footer.phtml' ?>
