@@ -41,7 +41,7 @@ switch ($params[0]) {
     case 'editar':
         $controller = new editarController();
         $controller->showEditar($params[1]);
-        break;
+        break; 
     case 'editado':
         $controller = new editarController();
         $controller->editProducto($params[1]);

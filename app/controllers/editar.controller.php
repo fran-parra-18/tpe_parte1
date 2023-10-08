@@ -13,7 +13,7 @@ class EditarController {
         $this->model = new ProductosModel();
         $this->view = new EditarView();
     }
-
+ 
     function showEditar($id){     
         $this->view->showEditar($id);
     }

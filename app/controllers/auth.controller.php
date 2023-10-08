@@ -15,7 +15,7 @@ class AuthController {
     public function showLogin() {
         $this->view->showLogin();
     }
-
+ 
     public function auth() {
         $user = $_POST['user'];
         $password = $_POST['password'];

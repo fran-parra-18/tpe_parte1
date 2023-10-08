@@ -65,7 +65,7 @@ INSERT INTO `productos` (`id`, `categoriaID`, `producto`, `precio`, `stock`) VAL
 (3, 3, 'Remera', 8, 1),
 (4, 3, 'Pantalon', 12, 1),
 (5, 2, 'Silla', 15, 1),
-(13, 1, 'TV', 20000, 1);
+(13, 1, 'TV', 20000, 1); 
 
 -- --------------------------------------------------------
 

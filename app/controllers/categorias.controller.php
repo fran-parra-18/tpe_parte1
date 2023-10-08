@@ -13,7 +13,7 @@ class CategoriasController {
         $this->model = new CategoriaModel();
         $this->view = new Categoriasview();
     }
-
+ 
     function mostrarCategorias() {
 
             // obtengo tareas del controlador

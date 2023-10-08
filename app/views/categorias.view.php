@@ -9,4 +9,4 @@ class CategoriasView {
         require './templates/productosXCategorias.phtml';
     }
 
-}
+} 

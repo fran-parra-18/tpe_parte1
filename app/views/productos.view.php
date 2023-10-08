@@ -15,4 +15,4 @@ class ProductosView {
         require 'templates/home.phtml';
     }
     
-}
+} 

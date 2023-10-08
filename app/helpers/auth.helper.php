@@ -7,7 +7,7 @@ class AuthHelper {
             session_start();
         }
     }
-
+ 
     public static function login($user) {
         AuthHelper::init();
         $_SESSION['USER_ID'] = $user->id;

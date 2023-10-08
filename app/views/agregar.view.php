@@ -9,4 +9,4 @@ class AgregarView {
     public function showError($error) {
         require 'templates/error.phtml';
     }
-}
+} 

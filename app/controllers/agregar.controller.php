@@ -38,5 +38,5 @@ class AgregarController {
         echo "Error al insertar la tarea";
     }
 
-    }
+    } 
 }

@@ -7,4 +7,4 @@ class EditarView {
     public function showError($error) {
         require 'templates/error.phtml';
     }
-}
+} 

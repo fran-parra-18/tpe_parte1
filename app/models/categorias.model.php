@@ -7,7 +7,7 @@ class CategoriaModel {
         // Configura la conexión a tu base de datos (ajusta los valores según tu configuración).
         $this->db = new PDO('mysql:host=localhost;dbname=comercio;charset=utf8', 'root', '');
     }
-
+ 
     public function obtenerCategorias() {
         // Aquí puedes implementar la lógica para obtener las categorías de tu base de datos.
         $query = $this->db->query('SELECT * FROM categorias');
