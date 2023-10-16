@@ -75,7 +75,7 @@
               --
 
               INSERT INTO `users` (`id`, `user`, `password`) VALUES
-              (0, 'admin', '$2y$10$w3OUohfKw28vCSrxTHN0Su7dk1xGIJZ.xQ8G6gyHQp2yta.Sp66/S');
+              (0, 'webadmin', '$2y$10$w3OUohfKw28vCSrxTHN0Su7dk1xGIJZ.xQ8G6gyHQp2yta.Sp66/S');
 
               --
               -- Índices para tablas volcadas
