@@ -1,29 +1,42 @@
 <?php
-
-class CategoriaModel {
-    private $db;
-
-    function __construct() {
-        // Configura la conexión a tu base de datos (ajusta los valores según tu configuración).
-        $this->db = new PDO('mysql:host=localhost;dbname=comercio;charset=utf8', 'root', '');
-    }
- 
-    public function obtenerCategorias() {
-        // Aquí puedes implementar la lógica para obtener las categorías de tu base de datos.
-        $query = $this->db->query('SELECT * FROM categorias');
-
-        $categorias =$query->fetchAll(PDO::FETCH_OBJ);
-
+require_once './app/models/model.php';
+class CategoriasModel extends Model{
+    
+    public function getAllCategorias() {
+        $query = $this->db->prepare('SELECT * FROM categorias');
+        $query->execute();
+        $categorias=$query->fetchAll(PDO::FETCH_OBJ);;
+        
         return $categorias;
     }
 
-    function getProductosXCategoria($categoria){        
+    public function getCategoriaById($categoriaID) {
+        $query = $this->db->prepare("SELECT * FROM categorias WHERE categoriaID = ?");
+        $query->execute([$categoriaID]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 
-        $query = $this->db->prepare('SELECT A.id,A.producto,A.precio,A.stock,B.Nombre FROM productos A INNER JOIN categorias B ON A.categoriaID=B.CategoriaID WHERE B.Nombre="?"' );
-        $query-> execute($categoria);
-
-        $productos =$query->fetchAll(PDO::FETCH_OBJ);
-
-        return $productos;
+    public function deleteCategoria($categoriaID) {
+        // Primero, elimina los productos relacionados con esta categoría
+        $query = $this->db->prepare('DELETE FROM productos WHERE categoriaID = :categoriaID');
+        $query->bindParam(':categoriaID', $categoriaID, PDO::PARAM_INT);
+        $query->execute();
+    
+        // Luego, elimina la categoría
+        $query = $this->db->prepare('DELETE FROM categorias WHERE categoriaID = :categoriaID');
+        $query->bindParam(':categoriaID', $categoriaID, PDO::PARAM_INT);
+        $query->execute();
+    }
+    public function insertCategoria($nombre) {
+        
+        $query = $this->db->prepare('INSERT INTO categorias (nombre) VALUES(?)');
+        $query->execute([$nombre]);
+        
+        return $this->db->lastInsertId();
+        
+    }
+    function editCategoria($nombre, $categoriaID){
+        $query = $this->db->prepare('UPDATE categorias SET nombre=? WHERE categoriaID=?');
+        $query->execute([$nombre, $categoriaID]);
     }
 }

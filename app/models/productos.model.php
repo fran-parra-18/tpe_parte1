@@ -1,16 +1,19 @@
 <?php
-
-class ProductosModel{
-    private $db;
-
-    function __construct()
-    {
-        $this->db = new PDO('mysql:host=localhost;dbname=comercio;charset=utf8', 'root', '');
-    }
+require_once './app/models/model.php';
+class ProductosModel extends Model{
 
     function getProductos(){
         $query = $this->db->prepare('SELECT A.id,A.producto,A.precio,A.stock,B.Nombre FROM productos A INNER JOIN categorias B ON A.categoriaID=B.CategoriaID');
         $query-> execute();
+
+        $productos =$query->fetchAll(PDO::FETCH_OBJ);
+
+        return $productos;
+    }
+
+    function getProductoEspecifico($id){
+        $query = $this->db->prepare('SELECT A.id,A.producto,A.precio,A.stock,B.Nombre FROM productos A INNER JOIN categorias B ON A.categoriaID=B.CategoriaID WHERE A.id=?');
+        $query-> execute([$id]);
 
         $productos =$query->fetchAll(PDO::FETCH_OBJ);
 
@@ -37,8 +40,15 @@ class ProductosModel{
 
     }
 
-    function showError($error) {
-        require 'templates/error.phtml';
+    function getProductosByCategoria($categoriaID){ 
+        $query = $this->db->prepare('SELECT A.id,A.producto,A.precio,A.stock,B.Nombre FROM productos A INNER JOIN categorias B ON A.categoriaID=B.CategoriaID WHERE A.categoriaID=?' );
+        $query-> execute([$categoriaID]);
+
+        $productos =$query->fetchAll(PDO::FETCH_OBJ);
+
+        return $productos;
     }
+
+    
 
 }

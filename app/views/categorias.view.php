@@ -6,7 +6,9 @@ class CategoriasView {
     }
 
     public function mostrarProductoXCategortia($productos) {
-        require './templates/productosXCategorias.phtml';
+        require './templates/productoXCategoria.phtml';
     }
-
+    function showError($error) {
+        require 'templates/error.phtml';
+    }
 } 
