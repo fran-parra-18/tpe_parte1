@@ -14,4 +14,4 @@ class AgregarView {
         require 'templates/error.phtml';
     }
 
-} 
+}  

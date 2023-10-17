@@ -10,4 +10,4 @@ class EditarView {
     public function showEditarCategoria($categoriaID) {  
         require 'templates/editarCategorias.phtml';
     }  
-} 
+}  

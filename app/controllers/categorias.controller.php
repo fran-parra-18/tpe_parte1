@@ -3,7 +3,7 @@
 require_once './app/models/categorias.model.php';
 require_once './app/views/categorias.view.php';
 
-
+ 
 class CategoriasController {
     private $model;
     private $view;

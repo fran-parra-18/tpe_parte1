@@ -11,4 +11,4 @@ class CategoriasView {
     function showError($error) {
         require 'templates/error.phtml';
     }
-} 
+}  

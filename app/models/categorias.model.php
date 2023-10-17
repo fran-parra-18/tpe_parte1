@@ -15,7 +15,7 @@ class CategoriasModel extends Model{
         $query->execute([$categoriaID]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
-
+ 
     public function deleteCategoria($categoriaID) {
         // Primero, elimina los productos relacionados con esta categoría
         $query = $this->db->prepare('DELETE FROM productos WHERE categoriaID = :categoriaID');

@@ -24,4 +24,4 @@ class ProductosView {
     function showError($error) {
         require 'templates/error.phtml';
     }
-} 
+}  

@@ -4,7 +4,7 @@ require_once './app/models/categorias.model.php';
 require_once './app/models/user.model.php';
 require_once './app/models/productos.model.php';
 require_once './app/helpers/auth.helper.php';
-
+ 
 
 class AgregarController {
     private $view;

@@ -26,7 +26,7 @@ class AuthController {
             $this->view->showLogin('Faltan completar datos');
             return;
         }
-
+ 
         // busco el usuario
         $user = $this->model->getByUser($user);
 

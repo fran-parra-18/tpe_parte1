@@ -8,4 +8,4 @@ class UserModel extends Model{
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
-} 
+}  

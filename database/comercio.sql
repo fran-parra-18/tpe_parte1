@@ -41,7 +41,7 @@ INSERT INTO `categorias` (`categoriaID`, `nombre`) VALUES
 (2, 'Hogar'),
 (3, 'Indumentaria');
 
--- --------------------------------------------------------
+----------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `productos`

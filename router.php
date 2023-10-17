@@ -111,5 +111,5 @@ switch ($params[0]) {
         $controller = new productosController();
         $controller->showError();
         break;
-        
+         
 }

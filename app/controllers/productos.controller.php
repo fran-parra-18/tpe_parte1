@@ -35,7 +35,7 @@ class ProductosController {
         $this->model->deleteProducto($id);
         header('Location: ' . BASE_URL . '/productos');
     }
-
+ 
     function mostrarProductosXCategoria($categoriaID){
         $categoria = $this->categoriasModel->getCategoriaById($categoriaID);
         

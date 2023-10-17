@@ -9,7 +9,7 @@ class EditarController {
     private $view;
     private $model;
     private $categoriasmodel;
-
+ 
     function __construct(){
         AuthHelper::verifyStrict();
 

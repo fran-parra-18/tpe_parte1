@@ -2,7 +2,7 @@
   require_once '../tp/config.php';
     class Model {
         protected $db;
-
+ 
         function __construct() {
           $this->db = new PDO('mysql:host='. MYSQL_HOST.';charset=utf8', MYSQL_USER, MYSQL_PASS);
           if($this->db){
