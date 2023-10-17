@@ -4,17 +4,32 @@
         protected $db;
 
         function __construct() {
-            $this->db = new PDO('mysql:host='. MYSQL_HOST .';dbname='. MYSQL_DB .';charset=utf8', MYSQL_USER, MYSQL_PASS);
+          $this->db = new PDO('mysql:host='. MYSQL_HOST.';charset=utf8', MYSQL_USER, MYSQL_PASS);
+          if($this->db){
+            $this->createDatabaseSiNoExiste();
+            $this->db->exec('USE ' . MYSQL_DB);
             $this->deploy();
+          }
+          
         }
+
+      function createDatabaseSiNoExiste() {
+          $databaseName = MYSQL_DB;
+          $query = "CREATE DATABASE IF NOT EXISTS `$databaseName` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci";
+          $this->db->exec($query);
+          
+      }
 
         function deploy() {
             $query = $this->db->query('SHOW TABLES');
             $tables = $query->fetchAll();
+
+            $w3OUohfKw28vCSrxTHN0Su7dk1xGIJZ='$w3OUohfKw28vCSrxTHN0Su7dk1xGIJZ';
             
             if(count($tables)==0) {
-              // Si no hay crearlas
               $sql =<<<END
+              
+              --
               -- Estructura de tabla para la tabla `categorias`
               --
 
@@ -51,12 +66,12 @@
               --
 
               INSERT INTO `productos` (`id`, `categoriaID`, `producto`, `precio`, `stock`) VALUES
-              (1, 3, 'Pantalon', 2000, 1),
-              (2, 1, 'Computadora', 60, 1),
+              (1, 3, 'Sofá', 50, 1),
+              (2, 1, 'computadora', 500, 1),
               (3, 3, 'Remera', 8, 1),
               (4, 3, 'Pantalon', 12, 1),
               (5, 2, 'Silla', 15, 1),
-              (13, 1, 'TV', 20000, 1); 
+              (13, 1, 'TV', 1000, 1);
 
               -- --------------------------------------------------------
 
@@ -108,13 +123,13 @@
               -- AUTO_INCREMENT de la tabla `categorias`
               --
               ALTER TABLE `categorias`
-                MODIFY `categoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+                MODIFY `categoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
               --
               -- AUTO_INCREMENT de la tabla `productos`
               --
               ALTER TABLE `productos`
-                MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+                MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
               --
               -- Restricciones para tablas volcadas

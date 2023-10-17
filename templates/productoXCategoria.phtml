@@ -6,9 +6,10 @@
             <div class="categoria-section">
             <h2>Categoría: <?= htmlspecialchars($categoria->nombre) ?></h2>
                 <?php if (isset($_SESSION['USER_ID'])) : ?>
-                    <a href="Eliminar/<?= $categoria->categoriaID?>" class="btn btn-danger btn-sm ml-2">Eliminar</a>
-                <?php endif ?>
+                    <a href="eliminarCategoria/<?= $categoria->categoriaID?>" class="btn btn-danger btn-sm ml-2">Eliminar</a>
+                
                 <a href="EditarCategoria/<?= $categoria->categoriaID ?>" class="btn btn-primary btn-sm">Editar Categoria</a>
+                <?php endif ?>
         
         </div>
     </div>

@@ -19,7 +19,7 @@ class ProductosModel extends Model{
 
         return $productos;
     }
- 
+
     function insertProducto($producto, $precio, $categoria) {        
     
         $query = $this->db->prepare('INSERT INTO productos (producto, precio, categoriaID) VALUES(?,?,?)');
