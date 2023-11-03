@@ -1,5 +1,5 @@
 <?php
-  require_once '../tp/config.php';
+  require_once 'config.php';
     class Model {
         protected $db;
  
